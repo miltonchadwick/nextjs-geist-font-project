@@ -52,4 +52,4 @@ Enjoy managing your accounting with ease and compliance!
 
 ---
 
-*Crafted with care by KBouziane*
+*Crafted with care by Milton Chadwick*
