@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Django Accounting App
 
-## Getting Started
+This repository contains a reusable Django app for managing accounting and financial books, specifically designed for Belgian companies and compliant with Belgian accounting rules and laws.
 
-First, run the development server:
+## What's Included
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The `accounting/` directory contains a complete Django app with:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Models**: Comprehensive accounting models including accounts, partners, invoices, payments, VAT rates, fiscal years, and journal entries
+- **Admin Interface**: Fully configured Django admin for managing all accounting data
+- **Views**: Basic CRUD views for accounts and journal entries
+- **Forms**: Django forms for data input and validation
+- **Belgian Compliance**: Designed specifically for Belgian accounting standards and tax regulations
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quick Start
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Copy the `accounting/` folder into your Django project
+2. Add `'accounting'` to your `INSTALLED_APPS` in settings.py
+3. Run migrations:
+   ```bash
+   python manage.py makemigrations accounting
+   python manage.py migrate
+   ```
+4. Include URLs in your project's urls.py:
+   ```python
+   path('accounting/', include('accounting.urls')),
+   ```
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- Multi-currency support with exchange rates
+- Partner management (customers/suppliers)
+- Invoice and payment tracking
+- VAT handling for Belgian tax compliance
+- Fiscal year and period management
+- Balanced journal entries with audit trails
+- Comprehensive Django admin interface
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For detailed documentation, see `accounting/README.md`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Crafted with care by Milton Chadwick*
